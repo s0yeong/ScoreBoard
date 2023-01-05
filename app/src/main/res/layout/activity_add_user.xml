@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/face_id"
+        android:backgroundTint="#FF7F50"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:background="@drawable/background_circle">
+
+        <Button
+            android:id="@+id/btn_addUser"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:elevation="20dp"
+            android:text="ADD"
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.2"
+            android:textScaleX="1.1"
+            android:textSize="25dp"
+            android:background="@drawable/rectangle_orange"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/rectangle_orange"
+                android:text="ID"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textScaleX="1.1"
+                android:letterSpacing="0.2"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:text="10자 이내로 입력하세요."
+                android:textStyle="normal"
+                android:textColor="#999999"
+                android:background="@drawable/rectangle_white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/rectangle_orange"
+                android:text="Age"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textScaleX="1.1"
+                android:letterSpacing="0.2"
+                android:textSize="20dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:text="예) 30"
+                android:textStyle="normal"
+                android:textColor="#999999"
+                android:background="@drawable/rectangle_white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/rectangle_orange"
+                android:text="Sex"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textScaleX="1.1"
+                android:letterSpacing="0.2"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="15dp"
+                android:text="예) man / woman"
+                android:textStyle="normal"
+                android:textColor="#999999"
+                android:background="@drawable/rectangle_white"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

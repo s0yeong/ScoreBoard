@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:text="  게임 추가:"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textScaleX="1.1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="8dp"
+            android:text="예) 탁구"
+            android:textSize="25dp"
+            android:textStyle="normal"
+            android:textColor="#999999"
+            android:textScaleX="1.1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_circle"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_addGame"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rectangle_orange"
+            android:text="ADD"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_game1"
+                    android:layout_width="380dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rectangle_orange"
+                    android:text="탁구"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_game2"
+                    android:layout_width="380dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rectangle_orange"
+                    android:text="배드민턴"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btn_game3"
+                    android:layout_width="380dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rectangle_orange"
+                    android:text="축구"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btn_game4"
+                    android:layout_width="380dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rectangle_orange"
+                    android:text="농구"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
