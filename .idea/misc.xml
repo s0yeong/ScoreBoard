@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/drawable/black_background.xml" value="0.2545" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/drawable/circle_white.xml" value="0.2545" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/drawable/empty_rect_orange.xml" value="0.2545" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/drawable/game_border.xml" value="0.259" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2545" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/drawable/rectangle_orange.xml" value="0.2545" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/drawable/stroce_white.xml" value="0.2545" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/layout/activity_add_game.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/layout/activity_add_user.xml" value="0.2390625" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/layout/activity_choose_game.xml" value="0.2390625" />
+        <entry key="..\:/Users/com/product/toyproject_scoreboard/ScoreBoard/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/deerg/product/Toy_project/app/src/main/res/drawable/game_boarder.xml" value="0.367" />
         <entry key="..\:/Users/deerg/product/Toy_project/app/src/main/res/drawable/game_border.xml" value="0.367" />
         <entry key="..\:/Users/deerg/product/Toy_project/app/src/main/res/drawable/login.xml" value="0.367" />
