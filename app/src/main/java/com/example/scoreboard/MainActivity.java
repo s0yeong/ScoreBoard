@@ -1,5 +1,6 @@
 package com.example.scoreboard;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,11 +15,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = (Button) findViewById(R.id.btn_start);
-        button.setOnClickListener(new View.OnClickListener() {
+        ActionBar bar = getSupportActionBar();
+        bar.hide();
+
+        Button buttonStart = (Button) findViewById(R.id.btn_start);
+        buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainGameActivity.class);
+                startActivity(intent);
 
             }
         });

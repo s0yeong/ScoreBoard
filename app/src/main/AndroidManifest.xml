@@ -34,9 +34,7 @@
         <activity
             android:name=".AddUserActivity"
             android:exported="false" />
-        <activity
-            android:name=".AddGameActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

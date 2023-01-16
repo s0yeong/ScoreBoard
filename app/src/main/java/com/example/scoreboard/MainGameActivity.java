@@ -1,40 +1,72 @@
 package com.example.scoreboard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class MainGameActivity extends AppCompatActivity {
-    FrameLayout frame;
-    ArrayList arrayList = new ArrayList();
-    SwipeRefreshLayout mSwipeRefreshLayout;
-    TextView mTextView;
-    Button addTextView;
+    ViewpagerAdapter pagerAdapter;
+    ViewPager2 viewPager2;
+    ArrayList<Fragment> fragList = new ArrayList<Fragment>();
+    Button addGameBtn, modifyGameBtn, deleteGameBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game);
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeToRefresh);
-        mTextView = (TextView) findViewById(R.id.gameName);
+        viewPager2 = findViewById(R.id.game_pager);
 
-        addTextView = findViewById(R.id.btn_add);
-        addTextView.setOnClickListener(new View.OnClickListener() {
+        // 기본 게임 3개 추가
+        Fragment fragment1 = new Fragment();
+        Fragment fragment2 = new Fragment();
+        Fragment fragment3 = new Fragment();
+
+        fragList.add(fragment1);
+        fragList.add(fragment2);
+        fragList.add(fragment3);
+
+        pagerAdapter = new ViewpagerAdapter(setGameList());
+
+
+        addGameBtn = findViewById(R.id.btn_add);
+        modifyGameBtn = findViewById(R.id.btn_modify);
+        deleteGameBtn = findViewById(R.id.btn_delete);
+
+        addGameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addTextView();
+                setGameList();
             }
+
         });
+
+
+    }
+
+    private ArrayList setGameList() {
+        ArrayList<String> itemList = new ArrayList();
+
+        addGameBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new Fragment();
+                fragList.add(fragment);
+            }
+
+        });
+
+        return itemList;
     }
 
     private void addTextView() {
