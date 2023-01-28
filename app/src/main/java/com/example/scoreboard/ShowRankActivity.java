@@ -23,5 +23,34 @@ public class ShowRankActivity extends AppCompatActivity {
                 startActivity(homeIntent);
             }
         });
+
+        Button btnToTotal = (Button) findViewById(R.id.rank_total);
+        btnToTotal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent totalIntent = new Intent(getApplicationContext(), TotalRankActivity.class);
+                startActivity(totalIntent);
+            }
+        });
+
+        Button btnToGame = (Button) findViewById(R.id.rank_game);
+        btnToTotal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gameIntent = new Intent(getApplicationContext(), GameRankActivity.class);
+                startActivity(gameIntent);
+            }
+        });
+
+        Button btnToId = (Button) findViewById(R.id.rank_id);
+        btnToTotal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent idIntent = new Intent(getApplicationContext(), UserRankActivity.class);
+                startActivity(idIntent);
+            }
+        });
+
+
     }
 }

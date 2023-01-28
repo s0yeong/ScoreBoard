@@ -43,6 +43,15 @@ public class InGameActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonRank = (Button) findViewById(R.id.rank_page);
+        buttonRank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent rankIntent = new Intent(getApplicationContext(), ShowRankActivity.class);
+                startActivity(rankIntent);
+            }
+        });
+
 
     }
 
