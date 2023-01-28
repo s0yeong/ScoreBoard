@@ -22,10 +22,11 @@ public class MainActivity extends AppCompatActivity {
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainGameActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ChooseActivity.class);
                 startActivity(intent);
 
             }
         });
+
     }
 }

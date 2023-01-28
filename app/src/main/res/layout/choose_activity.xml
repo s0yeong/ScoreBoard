@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="270dp"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_game_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:text="GAME"
+            android:background="@drawable/rectangle_orange"/>
+
+        <Button
+            android:id="@+id/btn_user_list_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:text="User List"
+            android:background="@drawable/rectangle_orange"/>
+
+        <Button
+            android:id="@+id/btn_rank_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rectangle_orange"
+            android:text="Rank"/>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

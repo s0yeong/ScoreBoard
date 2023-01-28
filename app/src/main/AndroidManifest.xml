@@ -34,7 +34,9 @@
         <activity
             android:name=".AddUserActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".ChooseActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

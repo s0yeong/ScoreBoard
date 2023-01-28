@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainGameActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -38,6 +40,18 @@ public class MainGameActivity extends AppCompatActivity {
 
 
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new GameAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(GameAdapter.ViewHolder holder, View view, int position) {
+                GameItem item = adapter.getItem(position);
+                String name = item.getGameName().toString();
+
+                Intent intent = new Intent(getApplicationContext(), InGameActivity.class);
+                intent.putExtra("gameName", name);
+                startActivity(intent);
+            }
+        });
 
     }
 

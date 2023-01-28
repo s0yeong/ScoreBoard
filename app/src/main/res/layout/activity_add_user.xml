@@ -55,6 +55,7 @@
                 android:textSize="20dp"/>
 
             <EditText
+                android:id="@+id/edit_name"
                 android:layout_width="260dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"
@@ -91,6 +92,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/edit_age"
                 android:layout_width="260dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"
@@ -133,6 +135,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
+                    android:id="@+id/checkbox_man"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
@@ -143,6 +146,7 @@
                     android:onClick="onCheckboxClicked_man"/>
 
                 <CheckBox
+                    android:id="@+id/checkbox_woman"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
@@ -163,13 +167,6 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:gravity="center">
-
-            <Button
-                android:id="@+id/btn_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/backward_btn"/>
 
             <Button
                 android:id="@+id/btn_home"

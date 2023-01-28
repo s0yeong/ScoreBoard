@@ -16,7 +16,11 @@ import java.util.ArrayList;
 public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
     Context context;
     ArrayList<GameItem> items = new ArrayList<GameItem>(); //item 데이터
+    OnItemClickListener listener;
 
+    public static interface OnItemClickListener {
+        public void onItemClick(ViewHolder holder, View view, int position);
+    }
 
     public GameAdapter(Context context) {
         this.context = context;
@@ -41,6 +45,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
         GameItem item = items.get(position);
         holder.setItem(item);
 
+        holder.setOnItemClickListener(listener);
     }
 
     public void addItem(GameItem item) {
@@ -55,18 +60,38 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
         return items.get(position);
     }
 
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView_game;
+        OnItemClickListener listener;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textView_game =  (TextView) itemView.findViewById(R.id.textView_game);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+
+                    if(listener != null) {
+                        listener.onItemClick(ViewHolder.this, view, position);
+                    }
+                }
+            });
+
         }
 
         public void setItem(GameItem item) {
             textView_game.setText(item.getGameName());
+        }
+
+        public void setOnItemClickListener(OnItemClickListener listener) {
+            this.listener = listener;
         }
     }
 
