@@ -1,18 +1,14 @@
 package com.example.scoreboard;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
-
-import java.util.ArrayList;
 
 public class MainGameActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
 
 
     @Override
@@ -20,41 +16,29 @@ public class MainGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game);
 
-        ViewPager2 pager = (ViewPager2) findViewById(R.id.game_pager);
+        recyclerView = (RecyclerView) findViewById(R.id.game_pager);
+        PagerSnapHelper snapHelper = new PagerSnapHelper();
 
-        GamePagerAdapter adapter;
-        adapter = new GamePagerAdapter(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        GameAdapter adapter = new GameAdapter(getApplicationContext());
+
+        //pager indicator
+        recyclerView.addItemDecoration(new CircleIndicator());
+        //add page behavior
+        snapHelper.attachToRecyclerView(recyclerView);
 
 
+        adapter.addItem(new GameItem("탁구"));
+        adapter.addItem(new GameItem("축구"));
+        adapter.addItem(new GameItem("배드민턴"));
+        adapter.addItem(new GameItem("가위바위보"));
+        adapter.addItem(new GameItem("농구"));
 
 
-        pager.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
 
     }
-
-    class GamePagerAdapter extends FragmentStateAdapter {
-        ArrayList<Fragment> items = new ArrayList<Fragment>();
-        public GamePagerAdapter(@NonNull FragmentActivity fragmentActivity) {
-            super(fragmentActivity);
-        }
-
-        public void addItem(Fragment item) {
-            items.add(item);
-        }
-
-        @NonNull
-        @Override
-        public Fragment createFragment(int position) {
-            return items.get(position);
-        }
-
-        @Override
-        public int getItemCount() {
-            return items.size();
-        }
-    }
-
-
-
 
 }
