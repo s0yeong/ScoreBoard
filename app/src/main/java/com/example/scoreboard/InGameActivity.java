@@ -27,8 +27,8 @@ public class InGameActivity extends AppCompatActivity {
         buttonAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent addUserIntent = new Intent(getApplicationContext(), AddUserActivity.class);
-                startActivity(addUserIntent);
+                Intent userListIntent = new Intent(getApplicationContext(), UserListActivity.class);
+                startActivity(userListIntent);
             }
         });
 

@@ -25,6 +25,13 @@ public class ChooseActivity extends AppCompatActivity {
         });
 
         Button btnToUserList = (Button) findViewById(R.id.btn_user_list_page);
+        btnToUserList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), UserListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button btnToRank = (Button) findViewById(R.id.btn_rank_page);
         btnToRank.setOnClickListener(new View.OnClickListener() {

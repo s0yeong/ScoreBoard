@@ -10,27 +10,6 @@
         android:layout_marginTop="10dp"
         android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_gravity="right">-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_back_to_main_game"-->
-<!--                android:layout_width="30dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_marginRight="5dp"-->
-<!--                android:background="@drawable/backward_btn"/>-->
-
-<!--            <Button-->
-<!--                android:layout_width="30dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:background="@drawable/home_btn"-->
-<!--                android:layout_marginRight="7dp"/>-->
-
-<!--        </LinearLayout>-->
-
         <TextView
             android:id="@+id/game_selected"
             android:layout_width="wrap_content"

@@ -18,4 +18,13 @@
     <style name="CustomToolBar" parent="@style/Widget.AppCompat.Toolbar">
         <item name="titleTextColor">@color/white</item>
     </style>
+
+    <style name="Theme.ScoreBoard.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ScoreBoard.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ScoreBoard.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -142,8 +142,7 @@
                     android:layout_weight="1"
                     android:text="Man"
                     android:textSize="20dp"
-                    android:background="@drawable/rectangle_white"
-                    android:onClick="onCheckboxClicked_man"/>
+                    android:background="@drawable/rectangle_white"/>
 
                 <CheckBox
                     android:id="@+id/checkbox_woman"
@@ -153,27 +152,10 @@
                     android:layout_weight="1"
                     android:text="Woman"
                     android:textSize="20dp"
-                    android:background="@drawable/rectangle_white"
-                    android:onClick="onCheckboxClicked_woman"/>
+                    android:background="@drawable/rectangle_white"/>
 
             </LinearLayout>
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btn_home"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/home_btn"
-                android:layout_marginLeft="10dp"/>
 
         </LinearLayout>
 

@@ -1,13 +1,20 @@
 package com.example.scoreboard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class AddUserActivity extends AppCompatActivity {
 
@@ -17,47 +24,59 @@ public class AddUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_user);
 
         Button userAddButton = (Button) findViewById(R.id.btn_addUser);
-        Button homeButton = (Button) findViewById(R.id.btn_home);
 
-        userAddButton.setOnClickListener(new View.OnClickListener() {
+        EditText editName = (EditText) findViewById(R.id.edit_name);
+        EditText editAge = (EditText) findViewById(R.id.edit_age);
+        CheckBox checkBoxM = (CheckBox) findViewById(R.id.checkbox_man);
+        CheckBox checkBoxW = (CheckBox) findViewById(R.id.checkbox_woman);
+
+        String name = editName.getText().toString();
+        int age = 0;
+        try {
+            age = Integer.parseInt(editAge.getText().toString().trim());
+        } catch (NumberFormatException e) {
+
+        } catch (Exception e) {
+
+        }
+        int finalAge = age;
+
+        final String[] sex = {null};
+        checkBoxM.setOnClickListener(new CheckBox.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent userAddedIntent = new Intent(getApplicationContext(), InGameActivity.class);
-
-                EditText editName = (EditText) findViewById(R.id.edit_name);
-                EditText editAge = (EditText) findViewById(R.id.edit_age);
-                CheckBox checkBoxM = (CheckBox) findViewById(R.id.checkbox_man);
-                CheckBox checkBoxW = (CheckBox) findViewById(R.id.checkbox_woman);
-
-                assert userAddedIntent != null;
-                String name = editName.getText().toString();
-                userAddedIntent.putExtra("userName", name);
-                int age = Integer.parseInt(editAge.getText().toString().trim());
-                userAddedIntent.putExtra("userAge", age);
-
-                String sex = null;
-                if (checkBoxM.isChecked()) {
-                    if (checkBoxW.isChecked()) {
-                        checkBoxW.setChecked(false);
-                    }
-                    sex = "man";
-                } else if (checkBoxW.isChecked()) {
-                    if (checkBoxM.isChecked()) {
-                        checkBoxM.setChecked(false);
-                    }
-                    sex = "woman";
+            public void onClick(View v) {
+                if (checkBoxW.isChecked()) {
+                    checkBoxW.setChecked(false);
                 }
-                userAddedIntent.putExtra("sex", sex);
+                sex[0] = checkBoxM.getText().toString();
+            }
+        });
+        checkBoxW.setOnClickListener(new CheckBox.OnClickListener() {
 
-                startActivity(userAddedIntent);
+            @Override
+            public void onClick(View v) {
+                if (checkBoxM.isChecked()) {
+                    checkBoxM.setChecked(false);
+                }
+                sex[0] = checkBoxW.getText().toString();
             }
         });
 
-        homeButton.setOnClickListener(new View.OnClickListener() {
+
+        String finalSex = sex[0];
+        userAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent homeIntent = new Intent(getApplicationContext(), MainGameActivity.class);
-                startActivity(homeIntent);
+                Intent userListIntent = new Intent();
+
+                userListIntent.putExtra("userName", name);
+                userListIntent.putExtra("userAge", finalAge);
+                userListIntent.putExtra("userSex", finalSex);
+
+                Toast.makeText(getApplicationContext(), "사용자: "+ name +" 추가됨.", Toast.LENGTH_LONG).show();
+                setResult(RESULT_OK, userListIntent);
+
+                finish();
             }
         });
     }
