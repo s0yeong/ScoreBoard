@@ -70,13 +70,13 @@
                     />
 
                 <Button
-                    android:id="@+id/rank_id"
+                    android:id="@+id/rank_user"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:background="@drawable/filled_rect_orange"
                     android:layout_marginLeft="5dp"
-                    android:text="ID"
+                    android:text="User"
                     android:textScaleX="1.1"
                     android:maxLines="1"
                     android:letterSpacing="0.2"

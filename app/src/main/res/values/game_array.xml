@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game">게임명</string>
+    <string-array name="game_array">
+        <item>탁구</item>
+        <item>축구</item>
+        <item>배드민턴</item>
+        <item>가위바위보</item>
+        <item>농구</item>
+    </string-array>
+</resources>

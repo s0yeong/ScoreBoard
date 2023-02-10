@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="username">유저이름</string>
+    <string-array name="username_array">
+        <item>Echo</item>
+        <item>Gabe</item>
+        <item>June</item>
+        <item>Suyeon</item>
+    </string-array>
+</resources>

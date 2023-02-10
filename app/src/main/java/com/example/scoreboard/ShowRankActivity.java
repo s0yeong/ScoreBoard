@@ -34,7 +34,7 @@ public class ShowRankActivity extends AppCompatActivity {
         });
 
         Button btnToGame = (Button) findViewById(R.id.rank_game);
-        btnToTotal.setOnClickListener(new View.OnClickListener() {
+        btnToGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent gameIntent = new Intent(getApplicationContext(), GameRankActivity.class);
@@ -42,12 +42,12 @@ public class ShowRankActivity extends AppCompatActivity {
             }
         });
 
-        Button btnToId = (Button) findViewById(R.id.rank_id);
-        btnToTotal.setOnClickListener(new View.OnClickListener() {
+        Button btnToUser = (Button) findViewById(R.id.rank_user);
+        btnToUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent idIntent = new Intent(getApplicationContext(), UserRankActivity.class);
-                startActivity(idIntent);
+                Intent userIntent = new Intent(getApplicationContext(), UserRankActivity.class);
+                startActivity(userIntent);
             }
         });
 
