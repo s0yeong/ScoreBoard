@@ -3,12 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/spinner_rank_inner_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_weight=".85"
         android:textColor="@color/white"
         android:letterSpacing="0.2"

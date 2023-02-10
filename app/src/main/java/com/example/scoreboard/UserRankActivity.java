@@ -1,6 +1,7 @@
 package com.example.scoreboard;
 
 import static com.example.scoreboard.R.id.btn_back;
+import static com.example.scoreboard.R.id.btn_home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
