@@ -56,13 +56,10 @@ public class UserListActivity extends AppCompatActivity {
                     if(result.getResultCode() == Activity.RESULT_OK) {
                         //다른 액티비티를 다녀와서 실행할 작업 작성
                         if(result != null) {
-                            Intent intentBefore = getIntent();
-                            Bundle bundle = intentBefore.getExtras();
-
-                            assert bundle != null;
-                            String name = (String) bundle.getString("userName");
-                            int age = (int) bundle.getInt("userAge");
-                            String sex = (String) bundle.getString("userSex");
+                            Intent intentBefore = result.getData();
+                            String name = (String) intentBefore.getStringExtra("userName");
+                            int age = (int) intentBefore.getIntExtra("userAge", 0);
+                            String sex = (String) intentBefore.getStringExtra("userSex");
 
                             userInfoAdapter.addItem(new UserInfoItem(name, age, sex));
                             recyclerView.setAdapter(userInfoAdapter);
