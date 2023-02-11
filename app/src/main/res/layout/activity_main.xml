@@ -29,13 +29,13 @@
         <Button
             android:id="@+id/btn_start"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:background="@drawable/empty_rect_orange"
             android:letterSpacing="0.2"
             android:text="Start"
             android:textColor="#FF7F50"
             android:textScaleX="1.1"
-            android:textSize="30dp" />
+            android:textSize="35dp" />
 
     </LinearLayout>
 
