@@ -14,7 +14,19 @@ public class ShowRankActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_rank);
 
+        Button buttonBack = (Button) findViewById(R.id.btn_back);
         Button buttonHome = (Button) findViewById(R.id.btn_home);
+        Button btnToTotal = (Button) findViewById(R.id.rank_total);
+        Button btnToGame = (Button) findViewById(R.id.rank_game);
+        Button btnToUser = (Button) findViewById(R.id.rank_user);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backIntent = new Intent(getApplicationContext(), InGameActivity.class);
+                startActivity(backIntent);
+            }
+        });
 
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,7 +36,6 @@ public class ShowRankActivity extends AppCompatActivity {
             }
         });
 
-        Button btnToTotal = (Button) findViewById(R.id.rank_total);
         btnToTotal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,7 +44,6 @@ public class ShowRankActivity extends AppCompatActivity {
             }
         });
 
-        Button btnToGame = (Button) findViewById(R.id.rank_game);
         btnToGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +52,7 @@ public class ShowRankActivity extends AppCompatActivity {
             }
         });
 
-        Button btnToUser = (Button) findViewById(R.id.rank_user);
+
         btnToUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

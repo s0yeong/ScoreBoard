@@ -64,6 +64,14 @@
             android:text="Modify"
             android:textSize="20dp"/>
 
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:text="Go Back"
+            android:textSize="20dp"/>
+
 
     </LinearLayout>
 

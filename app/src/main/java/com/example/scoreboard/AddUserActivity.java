@@ -24,6 +24,8 @@ public class AddUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_user);
 
         Button userAddButton = (Button) findViewById(R.id.btn_addUser);
+        Button backButton = (Button) findViewById(R.id.btn_back);
+        Button homeButton = (Button) findViewById(R.id.btn_home);
 
         EditText editName = (EditText) findViewById(R.id.edit_name);
         EditText editAge = (EditText) findViewById(R.id.edit_age);
@@ -67,7 +69,7 @@ public class AddUserActivity extends AppCompatActivity {
         userAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent userListIntent = new Intent();
+                Intent userListIntent = new Intent(getApplicationContext(), UserListActivity.class);
 
                 userListIntent.putExtra("userName", name);
                 userListIntent.putExtra("userAge", finalAge);
@@ -77,6 +79,23 @@ public class AddUserActivity extends AppCompatActivity {
                 setResult(RESULT_OK, userListIntent);
 
                 finish();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backIntent = new Intent(getApplicationContext(), InGameActivity.class);
+                startActivity(backIntent);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeIntent = new Intent(getApplicationContext(), MainGameActivity.class);
+                startActivity(homeIntent);
+
             }
         });
     }

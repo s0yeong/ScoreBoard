@@ -30,6 +30,7 @@ public class InGameActivity extends AppCompatActivity {
         textView.setText(name);
 
         Button buttonAddUser = (Button) findViewById(R.id.btn_addUser);
+        Button buttonBack = (Button) findViewById(R.id.btn_back);
         Button buttonHome = (Button) findViewById(R.id.btn_home);
         Button buttonRank = (Button) findViewById(R.id.rank_page);
         buttonAddUser.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +38,14 @@ public class InGameActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent userListIntent = new Intent(getApplicationContext(), UserListActivity.class);
                 startActivity(userListIntent);
+            }
+        });
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backIntent = new Intent(getApplicationContext(), MainGameActivity.class);
+                startActivity(backIntent);
             }
         });
 

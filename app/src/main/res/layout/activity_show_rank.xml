@@ -94,6 +94,13 @@
             android:gravity="center">
 
             <Button
+                android:id="@+id/btn_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/backward_btn"
+                android:layout_marginRight="10dp"/>
+
+            <Button
                 android:id="@+id/btn_home"
                 android:layout_width="30dp"
                 android:layout_height="30dp"

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainGameActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -17,6 +18,8 @@ public class MainGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game);
+
+        Button buttonBack = (Button) findViewById(R.id.btn_back);
 
         recyclerView = (RecyclerView) findViewById(R.id.game_pager);
         PagerSnapHelper snapHelper = new PagerSnapHelper();
@@ -53,6 +56,13 @@ public class MainGameActivity extends AppCompatActivity {
             }
         });
 
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backIntent = new Intent(getApplicationContext(), ChooseActivity.class);
+                startActivity(backIntent);
+            }
+        });
     }
 
 }
