@@ -32,48 +32,36 @@ public class AddUserActivity extends AppCompatActivity {
         CheckBox checkBoxM = (CheckBox) findViewById(R.id.checkbox_man);
         CheckBox checkBoxW = (CheckBox) findViewById(R.id.checkbox_woman);
 
-        String name = editName.getText().toString();
-        int age = 0;
-        try {
-            age = Integer.parseInt(editAge.getText().toString().trim());
-        } catch (NumberFormatException e) {
 
-        } catch (Exception e) {
-
-        }
-        int finalAge = age;
-
-        final String[] sex = {null};
-        checkBoxM.setOnClickListener(new CheckBox.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkBoxW.isChecked()) {
-                    checkBoxW.setChecked(false);
-                }
-                sex[0] = checkBoxM.getText().toString();
-            }
-        });
-        checkBoxW.setOnClickListener(new CheckBox.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (checkBoxM.isChecked()) {
-                    checkBoxM.setChecked(false);
-                }
-                sex[0] = checkBoxW.getText().toString();
-            }
-        });
-
-
-        String finalSex = sex[0];
         userAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent userListIntent = new Intent(getApplicationContext(), UserListActivity.class);
 
+                int pos = (int) view.getTag();
+
+                String name = editName.getText().toString();
+                int age = 0;
+                try {
+                    age = Integer.parseInt(editAge.getText().toString().trim());
+                } catch (NumberFormatException e) {
+
+                } catch (Exception e) {
+
+                }
+                int finalAge = age;
+
+                String sex = "";
+                if (checkBoxW.isChecked()) {
+                    sex = "woman";
+                } else if (checkBoxM.isChecked()) {
+                    sex = "man";
+                }
+
+
                 userListIntent.putExtra("userName", name);
                 userListIntent.putExtra("userAge", finalAge);
-                userListIntent.putExtra("userSex", finalSex);
+                userListIntent.putExtra("userSex", sex);
 
                 Toast.makeText(getApplicationContext(), "사용자: "+ name +" 추가됨.", Toast.LENGTH_LONG).show();
                 setResult(RESULT_OK, userListIntent);

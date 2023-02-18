@@ -53,6 +53,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.ViewHo
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        int userPos;
         TextView userId;
         TextView userAge;
         TextView userSex;
@@ -61,6 +62,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            int userPos = getAbsoluteAdapterPosition();
             userId = (TextView) itemView.findViewById(R.id.user_id);
             userAge = (TextView) itemView.findViewById(R.id.user_age);
             userSex = (TextView) itemView.findViewById(R.id.user_sex);

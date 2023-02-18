@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -33,6 +34,24 @@ public class InGameActivity extends AppCompatActivity {
         Button buttonBack = (Button) findViewById(R.id.btn_back);
         Button buttonHome = (Button) findViewById(R.id.btn_home);
         Button buttonRank = (Button) findViewById(R.id.rank_page);
+        Button buttonRestart = (Button) findViewById(R.id.btn_restart_game);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.username_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter);
+        spinner2.setAdapter(adapter);
+
+        spinner1.setSelection(0);
+        spinner2.setSelection(0);
+
+        String user1Name = spinner1.getSelectedItem().toString();
+        String user2Name = spinner2.getSelectedItem().toString();
+
+        EditText editTextofUser2Score = (EditText) findViewById(R.id.user2_score);
+
+
         buttonAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,33 +84,14 @@ public class InGameActivity extends AppCompatActivity {
             }
         });
 
+        buttonRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                spinner2.setSelection(0);
+                editTextofUser2Score.setText(null);
+            }
+        });
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.username_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(adapter);
-        spinner2.setAdapter(adapter);
-
-        String user1Name = spinner1.getSelectedItem().toString();
-        String user2Name = spinner2.getSelectedItem().toString();
-
-
-
-//        Intent intentSpinner1 = new Intent(this.) // 게임 기록하는 액티비티로 인텐트
-
-
-
-//        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                textView.setText((String) adapterView.getItemAtPosition(i));
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//                textView.setText("선택");
-//            }
-//        });
 
 
 
